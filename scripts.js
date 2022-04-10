@@ -18,20 +18,21 @@ const zero = document.querySelector("#zero");
 
 let equation = [];
 
+// pushes input to equation array if button is pressed //
 function input1() {
-    equation.push(" + ");
+    equation.push("+");
 
 }
 function input2() {
-    equation.push(" - ");
+    equation.push("-");
 
 }
 function input3() {
-    equation.push(" * ");
+    equation.push("*");
 
 }
 function input4() {
-    equation.push(" / ");
+    equation.push("/");
 
 }
 function input5() {
@@ -101,25 +102,53 @@ two.addEventListener("click", input14);
 one.addEventListener("click", input15);
 zero.addEventListener("click", input16);
 
+
+// trying to calculate two variables while also inputting math sign by using a define variable //
 function commence() {
-    function extractingArray() {
-        let finalEquation = equation.splice(0, 3);
+    let finalEquation = equation.splice(0, 3);
 
-        screen.textContent = (finalEquation);
-    };
+    screen.textContent = (finalEquation);
 
 
-    function changingArray() {
-        let a = finalEquation.pop();
-        let b = finalEquation.pop();
-        let c = finalEquation.pop();
-        return (a, b, c)
-    };
+        let alpha = finalEquation.shift();
+        let charlie = finalEquation.pop();
+        let beta = finalEquation.pop();
+        console.log(alpha, beta, charlie);
+        console.log(beta)
+        if (beta == +) {
+            let answer = (alpha + beta)
+            screen.textContent= answer
+        } else {
+            console.log("UHHHHHHHHHHHHHHHHHHHOHHHHHHHHHHHHHHH");
+        }
+        
+            
+
+
+
+
+        // last resort: //
+        // if sign == + do this //
+        //if sign == - do this //
 
 };
 
 
+// function add() {
 
+// }
+
+// function subtract() {
+
+// }
+
+// function multiply() {
+
+// }
+
+// function divide() {
+
+// }
 
 
 
