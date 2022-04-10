@@ -1,0 +1,10 @@
+#calculator.button {
+    padding:10px;
+
+}
+
+#screen {
+    width: 75px;
+    height: 22px;
+    background: gray;
+}
