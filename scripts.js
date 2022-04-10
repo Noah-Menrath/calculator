@@ -20,19 +20,19 @@ let equation = [];
 
 // pushes input to equation array if button is pressed //
 function input1() {
-    equation.push("+");
+    equation.push("add");
 
 }
 function input2() {
-    equation.push("-");
+    equation.push("subtract");
 
 }
 function input3() {
-    equation.push("*");
+    equation.push("multiply");
 
 }
 function input4() {
-    equation.push("/");
+    equation.push("divide");
 
 }
 function input5() {
@@ -110,18 +110,22 @@ function commence() {
     screen.textContent = (finalEquation);
 
 
-        let alpha = finalEquation.shift();
-        let charlie = finalEquation.pop();
-        let beta = finalEquation.pop();
-        console.log(alpha, beta, charlie);
-        console.log(beta)
-        if (beta == +) {
-            let answer = (alpha + beta)
+    let alpha = finalEquation.shift();
+    let charlie = finalEquation.pop();
+    let beta = finalEquation.pop();
+    console.log(alpha, beta, charlie);
+    console.log(beta);
+    function doMathPlease() {
+        if (beta == "add") {
+            let answer = (alpha + charlie)
             screen.textContent= answer
+            console.log(answer);
         } else {
             console.log("UHHHHHHHHHHHHHHHHHHHOHHHHHHHHHHHHHHH");
         }
-        
+    };
+    doMathPlease();
+            
             
 
 
