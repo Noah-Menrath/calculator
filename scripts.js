@@ -173,32 +173,19 @@ function commence() {
 };
 
 
-// function add() {
 
-// }
 
-// function subtract() {
-
-// }
-
-// function multiply() {
-
-// }
-
-// function divide() {
-
-// }
+// Make it so double digit values can be used and also round only if number has decimal and not all the time displaying ex. 5.00000 //
 
 
 
 
 
-// function screenInput() {
-//     screen.textContent = input
-// }
-// function solution() {
-//     screen.textContent = answer
-// }
+
+
+
+
+
 
 
 
