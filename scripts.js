@@ -19,24 +19,29 @@ const clear = document.querySelector("#clear");
 
 let equation = [];
 
+let operationEquation = [];
+
 // pushes input to equation array if button is pressed //
 function input1() {
-    equation.push("add");
+    operationEquation.push("add");
     screen.textContent="+";
+    let crazyEquation = equation.join('')
+    parseInt(crazyEquation)
+    console.log(crazyEquation)
 
 }
 function input2() {
-    equation.push("subtract");
+    operationEquation.push("subtract");
     screen.textContent="-";
 
 }
 function input3() {
-    equation.push("multiply");
+    operationEquation.push("multiply");
     screen.textContent="*";
 
 }
 function input4() {
-    equation.push("divide");
+    operationEquation.push("divide");
     screen.textContent="/";
 
 }
@@ -91,12 +96,20 @@ function input16() {
 
 }
 
+equals.addEventListener("click", equateStuff);
+
+function equateStuff() {
+    let lastNumber = equation.pop()
+    parseInt(lastNumber);
+    console.log(lastNumber);
+}
+
 
 add.addEventListener("click", input1);
 subtract.addEventListener("click", input2);
 multiply.addEventListener("click", input3);
 divide.addEventListener("click", input4);
-equals.addEventListener("click", commence);
+// equals.addEventListener("click", commence);
 nine.addEventListener("click", input7);
 eight.addEventListener("click", input8);
 seven.addEventListener("click", input9);
@@ -115,51 +128,51 @@ function clearData1() {
 
 
 // trying to calculate two variables while also inputting math sign by using a define variable //
-function commence() {
-    let finalEquation = equation.splice(0, 3);
+// function commence() {
+//     let finalEquation = equation.splice(0, 3);
 
-    screen.textContent = (finalEquation);
+//     screen.textContent = (finalEquation);
 
 
-    let alpha = finalEquation.shift();
-    let charlie = finalEquation.pop();
-    let beta = finalEquation.pop();
-    console.log(alpha, beta, charlie);
-    console.log(beta);
-    clear.addEventListener("click", clearData2);
-    function clearData2() {
-        finalEquation.length = 0;
-    }
-    clear.addEventListener("click", clearData3);
-    function clearData3() {
-        screen.textContent = ""
-    }
+//     let alpha = finalEquation.shift();
+//     let charlie = finalEquation.pop();
+//     let beta = finalEquation.pop();
+//     console.log(alpha, beta, charlie);
+//     console.log(beta);
+//     clear.addEventListener("click", clearData2);
+//     function clearData2() {
+//         finalEquation.length = 0;
+//     }
+//     clear.addEventListener("click", clearData3);
+//     function clearData3() {
+//         screen.textContent = ""
+//     }
     
-    function doMathPlease() {
-        if (beta == "add") {
-            let answer = (alpha + charlie)
-            screen.textContent= answer.toFixed(5);
-            console.log(answer);
-        } 
-        else if (beta == "subtract") {
-                let answer = (alpha - charlie)
-                screen.textContent= answer.toFixed(5);
-                console.log(answer);
-            }
-        else if (beta == "multiply") {
-                let answer = (alpha * charlie)
-                screen.textContent= answer.toFixed(5);
-                console.log(answer);
-            }
-        else if (beta == "divide") {
-                let answer = (alpha / charlie)
-                screen.textContent= answer.toFixed(5);
-                console.log(answer);
-        } else {
-            console.log("UHHHHHHHHHHHHHHHHHHHOHHHHHHHHHHHHHHH");
-        }
-    };
-    doMathPlease();
+//     function doMathPlease() {
+//         if (beta == "add") {
+//             let answer = (alpha + charlie)
+//             screen.textContent= answer;
+//             console.log(answer);
+//         } 
+//         else if (beta == "subtract") {
+//                 let answer = (alpha - charlie)
+//                 screen.textContent= answer;
+//                 console.log(answer);
+//             }
+//         else if (beta == "multiply") {
+//                 let answer = (alpha * charlie)
+//                 screen.textContent= answer.toFixed(1);
+//                 console.log(answer);
+//             }
+//         else if (beta == "divide") {
+//                 let answer = (alpha / charlie)
+//                 screen.textContent= answer.toFixed(3);
+//                 console.log(answer);
+//         } else {
+//             console.log("UHHHHHHHHHHHHHHHHHHHOHHHHHHHHHHHHHHH");
+//         }
+//     };
+//     doMathPlease();
             
             
 
@@ -170,7 +183,7 @@ function commence() {
         // if sign == + do this //
         //if sign == - do this //
 
-};
+// };
 
 
 
@@ -179,7 +192,7 @@ function commence() {
 
 
 
-
+// when double digit numbers (ex. 2, 7) --> when pressing operation sign (ex. +) --> output array into new array --> concat the first two entires (2 and 7) to form a double digit number --> turn it into a number using praseInt perhaps?
 
 
 
