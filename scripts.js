@@ -21,13 +21,24 @@ let equation = [];
 
 let operationEquation = [];
 
+let crazyEquation = [];
+crazyEquation.join('');
+
+
 // pushes input to equation array if button is pressed //
 function input1() {
     operationEquation.push("add");
     screen.textContent="+";
-    let crazyEquation = equation.join('')
-    parseInt(crazyEquation)
-    console.log(crazyEquation)
+    // let crazyEquation = equation.join('')
+   
+
+    // equation.push(equation, crazyEquation);
+    crazyEquation = equation
+    crazyEquation.join('');
+
+
+    parseInt(crazyEquation);
+    console.log(crazyEquation);
 
 }
 function input2() {
