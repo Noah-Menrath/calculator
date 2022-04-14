@@ -29,6 +29,8 @@ let secondNumbers = [];
 function input1() {
     operationEquation.push("add");
     screen.textContent="+";
+    firstNumbers = equation.join('')
+    console.log(`COMEONPLEASE: ${firstNumbers}`)
 
 
 }
@@ -100,12 +102,6 @@ function input16() {
 
 equals.addEventListener("click", secondNumbers);
 
-function equateStuff() {
-    let lastNumber = equation.pop()
-    parseInt(lastNumber);
-    console.log(lastNumber);
-}
-
 
 add.addEventListener("click", input1);
 subtract.addEventListener("click", input2);
@@ -123,6 +119,8 @@ two.addEventListener("click", input14);
 one.addEventListener("click", input15);
 zero.addEventListener("click", input16);
 
+
+
 clear.addEventListener("click", clearData1);
 function clearData1() {
     equation.length = 0;
@@ -131,8 +129,9 @@ function clearData1() {
 
 // trying to calculate two variables while also inputting math sign by using a define variable //
 function commence() {
-    let finalEquation = equation.splice(0, 6);
-
+    let finalEquation = equation.splice(0, 2);
+    let concatEquationFirst = finalEquation.join('');
+    console.log(`NEW: ${concatEquationFirst}`)
     screen.textContent = (finalEquation);
 
 
@@ -149,12 +148,13 @@ function commence() {
     function clearData3() {
         screen.textContent = ""
     }
+   
     
     function doMathPlease() {
         if (beta == "add") {
             let answer = (alpha + charlie)
             screen.textContent= answer;
-            console.log(answer);
+            console.log(`= ${answer}`);
         } 
         else if (beta == "subtract") {
                 let answer = (alpha - charlie)
