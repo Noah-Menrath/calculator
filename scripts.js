@@ -24,6 +24,8 @@ let operationEquation = [];
 let firstNumbers = [];
 let secondNumbers = [];
 
+let answer = [];
+
 
 // pushes input to equation array if button is pressed //
 function input1() {
@@ -38,16 +40,25 @@ function input1() {
 function input2() {
     operationEquation.push("subtract");
     screen.textContent="-";
+    firstNumbers = parseInt(equation.join(''));
+    console.log(`COMEONPLEASE: ${firstNumbers}`)
+    equation.length = 0;
 
 }
 function input3() {
     operationEquation.push("multiply");
     screen.textContent="*";
+    firstNumbers = parseInt(equation.join(''));
+    console.log(`COMEONPLEASE: ${firstNumbers}`)
+    equation.length = 0;
 
 }
 function input4() {
     operationEquation.push("divide");
     screen.textContent="/";
+    firstNumbers = parseInt(equation.join(''));
+    console.log(`COMEONPLEASE: ${firstNumbers}`)
+    equation.length = 0;
 
 }
 function input7() {
@@ -130,7 +141,13 @@ function clearData1() {
 function input17() {
     secondNumbers = parseInt(equation.join(''));
     console.log(`secondNumbers: ${secondNumbers}`)
+    parseInt(answer);
 }
+clear.addEventListener("click", clearData4);
+    function clearData4() {
+        firstNumbers = [];
+        secondNumbers = [];
+    }
 
 
 // trying to calculate two variables while also inputting math sign by using a define variable //
@@ -142,39 +159,44 @@ function commence() {
     // console.log(beta);
     clear.addEventListener("click", clearData2);
     function clearData2() {
-        finalEquation.length = 0;
+        
     }
     clear.addEventListener("click", clearData3);
     function clearData3() {
         screen.textContent = ""
     }
     
+    
+    
    
     
     function doMathPlease() {
         if (operationEquation == "add") {
-            let answer = (firstNumbers + secondNumbers)
+            answer = (firstNumbers + secondNumbers)
             screen.textContent= answer;
             console.log(answer);
         } 
         else if (operationEquation == "subtract") {
-                let answer = (firstNumbers - secondNumbers)
+                nswer = (firstNumbers - secondNumbers)
                 screen.textContent= answer;
                 console.log(answer);
             }
         else if (operationEquation == "multiply") {
-                let answer = (firstNumbers * secondNumbers)
+                answer = (firstNumbers * secondNumbers)
                 screen.textContent= answer.toFixed(1);
                 console.log(answer);
             }
         else if (operationEquation == "divide") {
-                let answer = (firstNumbers / secondNumbers)
+                answer = (firstNumbers / secondNumbers)
                 screen.textContent= answer.toFixed(3);
                 console.log(answer);
         } else {
             console.log("UHHHHHHHHHHHHHHHHHHHOHHHHHHHHHHHHHHH");
         }
         operationEquation.length = 0;
+        equation.length = 0;
+        firstNumbers = [];
+        secondNumbers = [];
 
     };
 
@@ -190,6 +212,18 @@ function commence() {
         //if sign == - do this //
 
 };
+
+function continuousCalculation() {
+    if (answer > 0 && add.clicked==true) {
+        firstNumbers = answer;
+        commence();
+        console.log("YEPPPP")
+    } else {
+        console.log("NOOOOOOOOO :(")
+    }
+}
+
+// if answer is > 0 && +, -, *, or / is clicked, then have answer = firstNumbers... //
 
 
 
