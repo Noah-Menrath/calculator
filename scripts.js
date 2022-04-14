@@ -21,24 +21,15 @@ let equation = [];
 
 let operationEquation = [];
 
-let crazyEquation = [];
-crazyEquation.join('');
+let firstNumbers = [];
+let secondNumbers = [];
 
 
 // pushes input to equation array if button is pressed //
 function input1() {
     operationEquation.push("add");
     screen.textContent="+";
-    // let crazyEquation = equation.join('')
-   
 
-    // equation.push(equation, crazyEquation);
-    crazyEquation = equation
-    crazyEquation.join('');
-
-
-    parseInt(crazyEquation);
-    console.log(crazyEquation);
 
 }
 function input2() {
@@ -107,7 +98,7 @@ function input16() {
 
 }
 
-equals.addEventListener("click", equateStuff);
+equals.addEventListener("click", secondNumbers);
 
 function equateStuff() {
     let lastNumber = equation.pop()
@@ -140,7 +131,7 @@ function clearData1() {
 
 // trying to calculate two variables while also inputting math sign by using a define variable //
 function commence() {
-    let finalEquation = equation.splice(0, 3);
+    let finalEquation = equation.splice(0, 6);
 
     screen.textContent = (finalEquation);
 
@@ -149,7 +140,7 @@ function commence() {
     let charlie = finalEquation.pop();
     let beta = finalEquation.pop();
     console.log(alpha, beta, charlie);
-    console.log(beta);
+    // console.log(beta);
     clear.addEventListener("click", clearData2);
     function clearData2() {
         finalEquation.length = 0;
@@ -183,7 +174,8 @@ function commence() {
             console.log("UHHHHHHHHHHHHHHHHHHHOHHHHHHHHHHHHHHH");
         }
     };
-    doMathPlease();
+
+    equals.addEventListener("click", doMathPlease);
             
             
 
@@ -218,3 +210,9 @@ function commence() {
 
 
 // if all else fails, have the user pick two numbers, then pick the sign of what they want to od (ex. multiply). It will trigger the multiply function and input a * b //
+
+
+
+
+
+// if * or / or + ir - pressed after = then have first number be the previous answer (in other words continue calculating without having to type in the answer that someone just got. ex. 3x2=6x3=18 instead of 3x2=6, 6x3=18) //
