@@ -298,3 +298,7 @@ function continuousCalculation() {
 // backbutton: if secondNumbers > 0 .pop or .slice? else if operationNumber = true? .pop or .slice? else if firstNumbers > 0 .pop or .slice? else if equation > 0 .pop or .slice? else console.log("WHOOOOOOOPS") //
 
 // perhaps add feature that textContent updates with multiple digit numbers instead of just having one number appear at a time or perhaps even have the entire equation show on the screen //
+
+// continous calculation (ex. 2x2 = 4x2)
+
+// currently calculation works as a * b = c, ideal calculation could be a * b * c * d * e = f //
