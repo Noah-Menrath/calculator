@@ -29,7 +29,7 @@ let secondNumbers = [];
 function input1() {
     operationEquation.push("add");
     screen.textContent="+";
-    firstNumbers = equation.join('')
+    firstNumbers = parseInt(equation.join(''));
     console.log(`COMEONPLEASE: ${firstNumbers}`)
     equation.length = 0;
 
@@ -128,7 +128,7 @@ function clearData1() {
 }
 
 function input17() {
-    secondNumbers = equation.join('');
+    secondNumbers = parseInt(equation.join(''));
     console.log(`secondNumbers: ${secondNumbers}`)
 }
 
@@ -138,10 +138,7 @@ function commence() {
     
 
 
-    let alpha = finalEquation.shift();
-    let charlie = finalEquation.pop();
-    let beta = finalEquation.pop();
-    console.log(alpha, beta, charlie);
+    
     // console.log(beta);
     clear.addEventListener("click", clearData2);
     function clearData2() {
@@ -151,34 +148,37 @@ function commence() {
     function clearData3() {
         screen.textContent = ""
     }
+    
    
     
     function doMathPlease() {
-        if (beta == "add") {
-            let answer = (alpha + charlie)
+        if (operationEquation == "add") {
+            let answer = (firstNumbers + secondNumbers)
             screen.textContent= answer;
-            console.log(`= ${answer}`);
+            console.log(answer);
         } 
-        else if (beta == "subtract") {
-                let answer = (alpha - charlie)
+        else if (operationEquation == "subtract") {
+                let answer = (firstNumbers - secondNumbers)
                 screen.textContent= answer;
                 console.log(answer);
             }
-        else if (beta == "multiply") {
-                let answer = (alpha * charlie)
+        else if (operationEquation == "multiply") {
+                let answer = (firstNumbers * secondNumbers)
                 screen.textContent= answer.toFixed(1);
                 console.log(answer);
             }
-        else if (beta == "divide") {
-                let answer = (alpha / charlie)
+        else if (operationEquation == "divide") {
+                let answer = (firstNumbers / secondNumbers)
                 screen.textContent= answer.toFixed(3);
                 console.log(answer);
         } else {
             console.log("UHHHHHHHHHHHHHHHHHHHOHHHHHHHHHHHHHHH");
         }
+        operationEquation.length = 0;
+
     };
 
-    equals.addEventListener("click", doMathPlease);
+    doMathPlease();
             
             
 
