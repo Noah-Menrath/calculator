@@ -16,6 +16,7 @@ const two = document.querySelector("#two");
 const one = document.querySelector("#one");
 const zero = document.querySelector("#zero");
 const clear = document.querySelector("#clear");
+const decimal = document.querySelector("#decimal");
 
 let equation = [];
 
@@ -111,6 +112,10 @@ function input16() {
     screen.textContent="0";
 
 }
+function input18() {
+    equation.push(".")
+    screen.textContent="."
+}
 
 equals.addEventListener("click", input17);
 
@@ -130,6 +135,7 @@ three.addEventListener("click", input13);
 two.addEventListener("click", input14);
 one.addEventListener("click", input15);
 zero.addEventListener("click", input16);
+decimal.addEventListener("click", input18);
 
 
 
@@ -253,3 +259,11 @@ function continuousCalculation() {
 
 
 // if * or / or + ir - pressed after = then have first number be the previous answer (in other words continue calculating without having to type in the answer that someone just got. ex. 3x2=6x3=18 instead of 3x2=6, 6x3=18) //
+
+
+
+
+
+
+
+// backbutton: if secondNumbers > 0 .pop or .slice? else if operationNumber = true? .pop or .slice? else if firstNumbers > 0 .pop or .slice? else if equation > 0 .pop or .slice? else console.log("WHOOOOOOOPS") //
