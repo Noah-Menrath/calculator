@@ -32,34 +32,63 @@ let answer = [];
 function input1() {
     operationEquation.push("add");
     screen.textContent="+";
-    firstNumbers = parseInt(equation.join(''));
-    console.log(`COMEONPLEASE: ${firstNumbers}`)
-    equation.length = 0;
+    if (equation.includes(".")) {
+        firstNumbers = parseFloat(equation.join(''));
+        console.log(`COMEONPLEASE: ${firstNumbers}`)
+        equation.length = 0;
+
+    } else {
+        firstNumbers = parseInt(equation.join(''));
+        console.log(`COMEONPLEASE: ${firstNumbers}`)
+        equation.length = 0;
+    }
+    
 
 
 }
 function input2() {
     operationEquation.push("subtract");
     screen.textContent="-";
-    firstNumbers = parseInt(equation.join(''));
-    console.log(`COMEONPLEASE: ${firstNumbers}`)
-    equation.length = 0;
+    if (equation.includes(".")) {
+        firstNumbers = parseFloat(equation.join(''));
+        console.log(`COMEONPLEASE: ${firstNumbers}`)
+        equation.length = 0;
+
+    } else {
+        firstNumbers = parseInt(equation.join(''));
+        console.log(`COMEONPLEASE: ${firstNumbers}`)
+        equation.length = 0;
+    }
 
 }
 function input3() {
     operationEquation.push("multiply");
     screen.textContent="*";
-    firstNumbers = parseInt(equation.join(''));
-    console.log(`COMEONPLEASE: ${firstNumbers}`)
-    equation.length = 0;
+    if (equation.includes(".")) {
+        firstNumbers = parseFloat(equation.join(''));
+        console.log(`COMEONPLEASE: ${firstNumbers}`)
+        equation.length = 0;
+
+    } else {
+        firstNumbers = parseInt(equation.join(''));
+        console.log(`COMEONPLEASE: ${firstNumbers}`)
+        equation.length = 0;
+    }
 
 }
 function input4() {
     operationEquation.push("divide");
     screen.textContent="/";
-    firstNumbers = parseInt(equation.join(''));
-    console.log(`COMEONPLEASE: ${firstNumbers}`)
-    equation.length = 0;
+    if (equation.includes(".")) {
+        firstNumbers = parseFloat(equation.join(''));
+        console.log(`COMEONPLEASE: ${firstNumbers}`)
+        equation.length = 0;
+
+    } else {
+        firstNumbers = parseInt(equation.join(''));
+        console.log(`COMEONPLEASE: ${firstNumbers}`)
+        equation.length = 0;
+    }
 
 }
 function input7() {
@@ -267,3 +296,5 @@ function continuousCalculation() {
 
 
 // backbutton: if secondNumbers > 0 .pop or .slice? else if operationNumber = true? .pop or .slice? else if firstNumbers > 0 .pop or .slice? else if equation > 0 .pop or .slice? else console.log("WHOOOOOOOPS") //
+
+// perhaps add feature that textContent updates with multiple digit numbers instead of just having one number appear at a time or perhaps even have the entire equation show on the screen //
