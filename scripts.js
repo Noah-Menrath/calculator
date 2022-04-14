@@ -31,6 +31,7 @@ function input1() {
     screen.textContent="+";
     firstNumbers = equation.join('')
     console.log(`COMEONPLEASE: ${firstNumbers}`)
+    equation.length = 0;
 
 
 }
@@ -100,7 +101,7 @@ function input16() {
 
 }
 
-equals.addEventListener("click", secondNumbers);
+equals.addEventListener("click", input17);
 
 
 add.addEventListener("click", input1);
@@ -126,13 +127,15 @@ function clearData1() {
     equation.length = 0;
 }
 
+function input17() {
+    secondNumbers = equation.join('');
+    console.log(`secondNumbers: ${secondNumbers}`)
+}
+
 
 // trying to calculate two variables while also inputting math sign by using a define variable //
 function commence() {
-    let finalEquation = equation.splice(0, 2);
-    let concatEquationFirst = finalEquation.join('');
-    console.log(`NEW: ${concatEquationFirst}`)
-    screen.textContent = (finalEquation);
+    
 
 
     let alpha = finalEquation.shift();
