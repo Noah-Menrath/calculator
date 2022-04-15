@@ -18,6 +18,8 @@ const zero = document.querySelector("#zero");
 const clear = document.querySelector("#clear");
 const decimal = document.querySelector("#decimal");
 
+
+// arrays storing numbers and operators which will be used in calculation //
 let equation = [];
 
 let operationEquation = [];
@@ -28,7 +30,7 @@ let secondNumbers = [];
 let answer = [];
 
 
-// pushes input to equation array if button is pressed //
+// pushes input to equation array if specific button is pressed //
 function input1() {
     operationEquation.push("add");
     screen.textContent="+";
@@ -43,8 +45,6 @@ function input1() {
         equation.length = 0;
     }
     
-
-
 }
 function input2() {
     operationEquation.push("subtract");
@@ -141,13 +141,15 @@ function input16() {
     screen.textContent="0";
 
 }
+function input17() {
+    secondNumbers = parseInt(equation.join(''));
+    console.log(`secondNumbers: ${secondNumbers}`)
+    parseInt(answer);
+}
 function input18() {
     equation.push(".")
     screen.textContent="."
 }
-
-equals.addEventListener("click", input17);
-
 
 add.addEventListener("click", input1);
 subtract.addEventListener("click", input2);
@@ -164,6 +166,7 @@ three.addEventListener("click", input13);
 two.addEventListener("click", input14);
 one.addEventListener("click", input15);
 zero.addEventListener("click", input16);
+equals.addEventListener("click", input17);
 decimal.addEventListener("click", input18);
 
 
@@ -173,11 +176,8 @@ function clearData1() {
     equation.length = 0;
 }
 
-function input17() {
-    secondNumbers = parseInt(equation.join(''));
-    console.log(`secondNumbers: ${secondNumbers}`)
-    parseInt(answer);
-}
+
+
 clear.addEventListener("click", clearData4);
     function clearData4() {
         firstNumbers = [];
@@ -185,25 +185,12 @@ clear.addEventListener("click", clearData4);
     }
 
 
-// trying to calculate two variables while also inputting math sign by using a define variable //
+// brain of the operation; when equals sign is clicked, calculation then commences //
 function commence() {
-    
-
-
-    
-    // console.log(beta);
-    clear.addEventListener("click", clearData2);
-    function clearData2() {
-        
-    }
     clear.addEventListener("click", clearData3);
     function clearData3() {
         screen.textContent = ""
     }
-    
-    
-    
-   
     
     function doMathPlease() {
         if (operationEquation == "add") {
@@ -236,17 +223,10 @@ function commence() {
     };
 
     doMathPlease();
-            
-            
-
-
-
-
-        // last resort: //
-        // if sign == + do this //
-        //if sign == - do this //
 
 };
+
+
 
 function continuousCalculation() {
     if (answer > 0 && add.clicked==true) {
@@ -257,6 +237,55 @@ function continuousCalculation() {
         console.log("NOOOOOOOOO :(")
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // if answer is > 0 && +, -, *, or / is clicked, then have answer = firstNumbers... //
 
