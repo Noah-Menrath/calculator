@@ -20,13 +20,14 @@ button {
     align-items: center;
     padding: 10px;
     font-size: 32px;
+    border:1px solid black
 }
 
 #calculator {
     display: flex;
     flex-wrap: wrap;
     width: 275px;
-    border: 1px solid red;
+    border:2px solid black
 }
 
 #one,
@@ -47,11 +48,14 @@ button {
     width: 68.765px;
     justify-content: center;
     align-items: center;
+    background-color: rgb(97, 209, 144);
+    border:1px solid black;
 }
 
 #equals {
     display: flex;
     width: 50%;
+    border:1px solid black;
 }
 
 #clear {
@@ -59,8 +63,20 @@ button {
     width: 50%;
     justify-content: center;
     align-items: center;
+    background-color: rgb(209, 57, 57);
+    border:1px solid black;
 }
 
 #zero {
     width: 137.515px;
+    background-color: rgb(97, 209, 144);
+    border:1px solid black;
+}
+
+#add,
+#subtract,
+#multiply,
+#divide,
+#equals {
+    background-color: rgb(214, 172, 45);
 }
