@@ -19,9 +19,8 @@ const clear = document.querySelector("#clear");
 const decimal = document.querySelector("#decimal");
 
 
-// arrays storing numbers and operators which will be used in calculation //
+// creating arrays which numbers and operators for calculations will be temporarily stored //
 let equation = [];
-
 let operationEquation = [];
 
 let firstNumbers = [];
@@ -30,7 +29,7 @@ let secondNumbers = [];
 let answer = [];
 
 
-// pushes input to equation array if specific button is pressed //
+// pushes input to equation array if button is pressed //
 function input1() {
     operationEquation.push("add");
     screen.textContent="+";
@@ -44,7 +43,8 @@ function input1() {
         console.log(`COMEONPLEASE: ${firstNumbers}`)
         equation.length = 0;
     }
-    
+
+
 }
 function input2() {
     operationEquation.push("subtract");
@@ -151,6 +151,9 @@ function input18() {
     screen.textContent="."
 }
 
+
+// assigning functions to each button press //
+equals.addEventListener("click", input17);
 add.addEventListener("click", input1);
 subtract.addEventListener("click", input2);
 multiply.addEventListener("click", input3);
@@ -166,18 +169,14 @@ three.addEventListener("click", input13);
 two.addEventListener("click", input14);
 one.addEventListener("click", input15);
 zero.addEventListener("click", input16);
-equals.addEventListener("click", input17);
 decimal.addEventListener("click", input18);
 
 
-
+// clearing data if clear button is pressed //
 clear.addEventListener("click", clearData1);
 function clearData1() {
     equation.length = 0;
 }
-
-
-
 clear.addEventListener("click", clearData4);
     function clearData4() {
         firstNumbers = [];
@@ -185,13 +184,19 @@ clear.addEventListener("click", clearData4);
     }
 
 
-// brain of the operation; when equals sign is clicked, calculation then commences //
+// trying to calculate two variables while also inputting math sign by using a define variable //
 function commence() {
+
+    // clearing data if clear button is pressed //
+    clear.addEventListener("click", clearData2);
+    function clearData2() {
+    }
     clear.addEventListener("click", clearData3);
     function clearData3() {
         screen.textContent = ""
     }
     
+    // calculates the equation //
     function doMathPlease() {
         if (operationEquation == "add") {
             answer = (firstNumbers + secondNumbers)
@@ -199,7 +204,7 @@ function commence() {
             console.log(answer);
         } 
         else if (operationEquation == "subtract") {
-                nswer = (firstNumbers - secondNumbers)
+                answer = (firstNumbers - secondNumbers)
                 screen.textContent= answer;
                 console.log(answer);
             }
@@ -215,6 +220,8 @@ function commence() {
         } else {
             console.log("UHHHHHHHHHHHHHHHHHHHOHHHHHHHHHHHHHHH");
         }
+
+        // clears data after calculating //
         operationEquation.length = 0;
         equation.length = 0;
         firstNumbers = [];
@@ -223,10 +230,12 @@ function commence() {
     };
 
     doMathPlease();
+            
+            
+
+
 
 };
-
-
 
 function continuousCalculation() {
     if (answer > 0 && add.clicked==true) {
@@ -237,46 +246,6 @@ function continuousCalculation() {
         console.log("NOOOOOOOOO :(")
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -317,8 +286,6 @@ function continuousCalculation() {
 
 
 // if * or / or + ir - pressed after = then have first number be the previous answer (in other words continue calculating without having to type in the answer that someone just got. ex. 3x2=6x3=18 instead of 3x2=6, 6x3=18) //
-
-
 
 
 
