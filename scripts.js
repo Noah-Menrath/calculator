@@ -49,7 +49,15 @@ function input1() {
 function input2() {
     operationEquation.push("subtract");
     screen.textContent="-";
-    if (equation.includes(".")) {
+    if (answer > 0) {
+        firstNumbers = answer;
+        console.log(answer)
+        secondNumbers = parseInt(equation.join(''));
+        console.log(secondNumbers)
+        commence();
+        console.log("YEPPPP")
+    }
+    else if (equation.includes(".")) {
         firstNumbers = parseFloat(equation.join(''));
         console.log(`COMEONPLEASE: ${firstNumbers}`)
         equation.length = 0;
@@ -59,6 +67,7 @@ function input2() {
         console.log(`COMEONPLEASE: ${firstNumbers}`)
         equation.length = 0;
     }
+    
 
 }
 function input3() {
@@ -186,13 +195,16 @@ decimal.addEventListener("click", input18);
 clear.addEventListener("click", clearData1);
 function clearData1() {
     equation.length = 0;
+    screen.textContent = "";
+    firstNumbers.length = 0;
+    firstNumbers = [];
+    secondNumbers.length = 0;
+    secondNumbers = [];
+    answer.length = 0;
+    answer = [];
+    operationEquation.length = 0;
+    operationEquation = [];
 }
-clear.addEventListener("click", clearData4);
-    function clearData4() {
-        firstNumbers = [];
-        secondNumbers = [];
-    }
-
 
 // trying to calculate two variables while also inputting math sign by using a define variable //
 function commence() {
@@ -247,15 +259,8 @@ function commence() {
 
 };
 
-function continuousCalculation() {
-    if (answer > 0 && add.clicked==true) {
-        firstNumbers = answer;
-        commence();
-        console.log("YEPPPP")
-    } else {
-        console.log("NOOOOOOOOO :(")
-    }
-}
+
+
 
 
 
