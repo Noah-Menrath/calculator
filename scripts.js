@@ -142,9 +142,19 @@ function input16() {
 
 }
 function input17() {
-    secondNumbers = parseInt(equation.join(''));
-    console.log(`secondNumbers: ${secondNumbers}`)
-    parseInt(answer);
+    
+    if (equation.includes(".")) {
+        secondNumbers = parseFloat(equation.join(''));
+        console.log(`secondNumbers: ${secondNumbers}`)
+        equation.length = 0;
+        parseInt(answer);
+
+    } else {
+        secondNumbers = parseInt(equation.join(''));
+        console.log(`secondNumbers: ${secondNumbers}`)
+        equation.length = 0;
+        parseInt(answer);
+    }
 }
 function input18() {
     equation.push(".")
