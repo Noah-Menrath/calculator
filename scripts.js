@@ -16,9 +16,11 @@ const two = document.querySelector("#two");
 const one = document.querySelector("#one");
 const zero = document.querySelector("#zero");
 const clear = document.querySelector("#clear");
+const decimal = document.querySelector("#decimal");
 
+
+// creating arrays which numbers and operators for calculations will be temporarily stored //
 let equation = [];
-
 let operationEquation = [];
 
 let firstNumbers = [];
@@ -31,34 +33,62 @@ let answer = [];
 function input1() {
     operationEquation.push("add");
     screen.textContent="+";
-    firstNumbers = parseInt(equation.join(''));
-    console.log(`COMEONPLEASE: ${firstNumbers}`)
-    equation.length = 0;
+    if (equation.includes(".")) {
+        firstNumbers = parseFloat(equation.join(''));
+        console.log(`COMEONPLEASE: ${firstNumbers}`)
+        equation.length = 0;
+
+    } else {
+        firstNumbers = parseInt(equation.join(''));
+        console.log(`COMEONPLEASE: ${firstNumbers}`)
+        equation.length = 0;
+    }
 
 
 }
 function input2() {
     operationEquation.push("subtract");
     screen.textContent="-";
-    firstNumbers = parseInt(equation.join(''));
-    console.log(`COMEONPLEASE: ${firstNumbers}`)
-    equation.length = 0;
+    if (equation.includes(".")) {
+        firstNumbers = parseFloat(equation.join(''));
+        console.log(`COMEONPLEASE: ${firstNumbers}`)
+        equation.length = 0;
+
+    } else {
+        firstNumbers = parseInt(equation.join(''));
+        console.log(`COMEONPLEASE: ${firstNumbers}`)
+        equation.length = 0;
+    }
 
 }
 function input3() {
     operationEquation.push("multiply");
     screen.textContent="*";
-    firstNumbers = parseInt(equation.join(''));
-    console.log(`COMEONPLEASE: ${firstNumbers}`)
-    equation.length = 0;
+    if (equation.includes(".")) {
+        firstNumbers = parseFloat(equation.join(''));
+        console.log(`COMEONPLEASE: ${firstNumbers}`)
+        equation.length = 0;
+
+    } else {
+        firstNumbers = parseInt(equation.join(''));
+        console.log(`COMEONPLEASE: ${firstNumbers}`)
+        equation.length = 0;
+    }
 
 }
 function input4() {
     operationEquation.push("divide");
     screen.textContent="/";
-    firstNumbers = parseInt(equation.join(''));
-    console.log(`COMEONPLEASE: ${firstNumbers}`)
-    equation.length = 0;
+    if (equation.includes(".")) {
+        firstNumbers = parseFloat(equation.join(''));
+        console.log(`COMEONPLEASE: ${firstNumbers}`)
+        equation.length = 0;
+
+    } else {
+        firstNumbers = parseInt(equation.join(''));
+        console.log(`COMEONPLEASE: ${firstNumbers}`)
+        equation.length = 0;
+    }
 
 }
 function input7() {
@@ -111,10 +141,29 @@ function input16() {
     screen.textContent="0";
 
 }
+function input17() {
+    
+    if (equation.includes(".")) {
+        secondNumbers = parseFloat(equation.join(''));
+        console.log(`secondNumbers: ${secondNumbers}`)
+        equation.length = 0;
+        parseInt(answer);
 
+    } else {
+        secondNumbers = parseInt(equation.join(''));
+        console.log(`secondNumbers: ${secondNumbers}`)
+        equation.length = 0;
+        parseInt(answer);
+    }
+}
+function input18() {
+    equation.push(".")
+    screen.textContent="."
+}
+
+
+// assigning functions to each button press //
 equals.addEventListener("click", input17);
-
-
 add.addEventListener("click", input1);
 subtract.addEventListener("click", input2);
 multiply.addEventListener("click", input3);
@@ -130,18 +179,13 @@ three.addEventListener("click", input13);
 two.addEventListener("click", input14);
 one.addEventListener("click", input15);
 zero.addEventListener("click", input16);
+decimal.addEventListener("click", input18);
 
 
-
+// clearing data if clear button is pressed //
 clear.addEventListener("click", clearData1);
 function clearData1() {
     equation.length = 0;
-}
-
-function input17() {
-    secondNumbers = parseInt(equation.join(''));
-    console.log(`secondNumbers: ${secondNumbers}`)
-    parseInt(answer);
 }
 clear.addEventListener("click", clearData4);
     function clearData4() {
@@ -152,16 +196,17 @@ clear.addEventListener("click", clearData4);
 
 // trying to calculate two variables while also inputting math sign by using a define variable //
 function commence() {
-    // console.log(beta);
+
+    // clearing data if clear button is pressed //
     clear.addEventListener("click", clearData2);
     function clearData2() {
-        
     }
     clear.addEventListener("click", clearData3);
     function clearData3() {
         screen.textContent = ""
     }
     
+    // calculates the equation //
     function doMathPlease() {
         if (operationEquation == "add") {
             answer = (firstNumbers + secondNumbers)
@@ -185,6 +230,8 @@ function commence() {
         } else {
             console.log("UHHHHHHHHHHHHHHHHHHHOHHHHHHHHHHHHHHH");
         }
+
+        // clears data after calculating //
         operationEquation.length = 0;
         equation.length = 0;
         firstNumbers = [];
@@ -198,11 +245,6 @@ function commence() {
 
 
 
-
-        // last resort: //
-        // if sign == + do this //
-        //if sign == - do this //
-
 };
 
 function continuousCalculation() {
@@ -214,6 +256,15 @@ function continuousCalculation() {
         console.log("NOOOOOOOOO :(")
     }
 }
+
+
+
+
+
+
+
+
+
 
 // if answer is > 0 && +, -, *, or / is clicked, then have answer = firstNumbers... //
 
@@ -245,3 +296,15 @@ function continuousCalculation() {
 
 
 // if * or / or + ir - pressed after = then have first number be the previous answer (in other words continue calculating without having to type in the answer that someone just got. ex. 3x2=6x3=18 instead of 3x2=6, 6x3=18) //
+
+
+
+
+
+// backbutton: if secondNumbers > 0 .pop or .slice? else if operationNumber = true? .pop or .slice? else if firstNumbers > 0 .pop or .slice? else if equation > 0 .pop or .slice? else console.log("WHOOOOOOOPS") //
+
+// perhaps add feature that textContent updates with multiple digit numbers instead of just having one number appear at a time or perhaps even have the entire equation show on the screen //
+
+// continous calculation (ex. 2x2 = 4x2)
+
+// currently calculation works as a * b = c, ideal calculation could be a * b * c * d * e = f //
