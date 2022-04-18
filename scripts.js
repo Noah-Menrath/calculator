@@ -49,15 +49,7 @@ function input1() {
 function input2() {
     operationEquation.push("subtract");
     screen.textContent="-";
-    if (answer > 0) {
-        firstNumbers = answer;
-        console.log(answer)
-        secondNumbers = parseInt(equation.join(''));
-        console.log(secondNumbers)
-        commence();
-        console.log("YEPPPP")
-    }
-    else if (equation.includes(".")) {
+    if (equation.includes(".")) {
         firstNumbers = parseFloat(equation.join(''));
         console.log(`COMEONPLEASE: ${firstNumbers}`)
         equation.length = 0;
@@ -67,6 +59,7 @@ function input2() {
         console.log(`COMEONPLEASE: ${firstNumbers}`)
         equation.length = 0;
     }
+   
     
 
 }
@@ -269,47 +262,37 @@ function commence() {
 
 
 
+// notes //
+
+
+
 
 
 // if answer is > 0 && +, -, *, or / is clicked, then have answer = firstNumbers... //
 
 
-
-
 // Make it so double digit values can be used and also round only if number has decimal and not all the time displaying ex. 5.00000 //
-
 
 
 // when double digit numbers (ex. 2, 7) --> when pressing operation sign (ex. +) --> output array into new array --> concat the first two entires (2 and 7) to form a double digit number --> turn it into a number using praseInt perhaps?
 
 
-
-
-
-
-
-
-
 // every input send that element into an array, once equal sign is pressed, extract elements from the array and then input it into a function to calculate, then have it appear on the screen //
-
 
 
 // if all else fails, have the user pick two numbers, then pick the sign of what they want to od (ex. multiply). It will trigger the multiply function and input a * b //
 
 
-
-
-
 // if * or / or + ir - pressed after = then have first number be the previous answer (in other words continue calculating without having to type in the answer that someone just got. ex. 3x2=6x3=18 instead of 3x2=6, 6x3=18) //
-
-
-
 
 
 // backbutton: if secondNumbers > 0 .pop or .slice? else if operationNumber = true? .pop or .slice? else if firstNumbers > 0 .pop or .slice? else if equation > 0 .pop or .slice? else console.log("WHOOOOOOOPS") //
 
+
 // perhaps add feature that textContent updates with multiple digit numbers instead of just having one number appear at a time or perhaps even have the entire equation show on the screen //
 
+
 // continous calculation (ex. 2x2 = 4x2)
+
 
 // currently calculation works as a * b = c, ideal calculation could be a * b * c * d * e = f //
